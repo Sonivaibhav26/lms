@@ -11,6 +11,15 @@ var routes = require('./api/routes');
 // Define the port to run on
 app.set('port', 3000);
 
+app.use(function(req, res, next) {
+  console.log(req.method, req.url);
+  next();
+});
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
+
+
 // Enable parsing for forms submisstions
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
