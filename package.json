@@ -12,6 +12,9 @@
   "author": "Vaibhav soni",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.1",
+    "angular-jwt": "^0.1.8",
+    "angular-route": "^1.6.1",
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
