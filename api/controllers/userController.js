@@ -24,3 +24,21 @@ module.exports.createUser = function (req, res) {
         }
     });
 };
+
+module.exports.deleteUser = function (req, res) {
+    console.log('deleting User');
+
+    var id = req.params.id;
+
+    User.findByIdAndRemove({
+        _id: id,
+    }, function (err, user) {
+        if (err) {
+            console.log(err);
+            res.status(400).json(err);
+        } else {
+            console.log('User deleted');
+            res.status(202).json({});
+        }
+    });
+};

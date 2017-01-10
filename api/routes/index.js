@@ -20,7 +20,15 @@ router
     .post(userCtrl.createUser);
 
 router
+    .route('/user/:id')
+    .delete(userCtrl.deleteUser);
+
+router
     .route('/book')
     .post(bookCtrl.createBook);
+
+router
+    .route('/book/:id')
+    .delete(bookCtrl.deleteBook);
 
 module.exports = router;
