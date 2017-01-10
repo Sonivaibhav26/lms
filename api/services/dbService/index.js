@@ -31,3 +31,4 @@ process.on('SIGINT', function() {
 
 require('./adminModel');
 require('./userModel');
+require('./bookModel');

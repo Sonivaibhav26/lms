@@ -4,7 +4,8 @@ var router = express.Router();
 //Loading routes controller/handlers
 var registerCtrl = require('../controllers/registerController.js');
 var loginCtrl = require('../controllers/loginController.js');
-var userCtrl = require('../controllers/userController.js'); 
+var userCtrl = require('../controllers/userController.js');
+var bookCtrl = require('../controllers/bookController.js'); 
 
 router
     .route('/register')
@@ -17,5 +18,9 @@ router
 router
     .route('/user')
     .post(userCtrl.createUser);
+
+router
+    .route('/book')
+    .post(bookCtrl.createBook);
 
 module.exports = router;
