@@ -29,6 +29,7 @@ router
 
 router
     .route('/book/:id')
+    .get(bookCtrl.updateBookStatus)
     .delete(bookCtrl.deleteBook);
 
 module.exports = router;

@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var dburl = 'mongodb://localhost:27017/lms';
+var options = { promiseLibrary: require('bluebird') };
 var retry = null;
-mongoose.connect(dburl);
+mongoose.connect(dburl,options);
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
