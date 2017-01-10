@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var adminUser = mongoose.model('adminUser');
 var bcrypt = require('bcrypt-nodejs');
-var jwt = require('jsonwebtoken');
 
 module.exports.register = function (req, res) {
     console.log('registering user');
