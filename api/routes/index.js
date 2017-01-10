@@ -17,19 +17,19 @@ router
 
 router
     .route('/user')
-    .post(userCtrl.createUser);
+    .post(loginCtrl.authenticate,userCtrl.createUser);
 
 router
     .route('/user/:id')
-    .delete(userCtrl.deleteUser);
+    .delete(loginCtrl.authenticate,userCtrl.deleteUser);
 
 router
     .route('/book')
-    .post(bookCtrl.createBook);
+    .post(loginCtrl.authenticate,bookCtrl.createBook);
 
 router
     .route('/book/:id')
-    .get(bookCtrl.updateBookStatus)
-    .delete(bookCtrl.deleteBook);
+    .get(loginCtrl.authenticate,bookCtrl.updateBookStatus)
+    .delete(loginCtrl.authenticate,bookCtrl.deleteBook);
 
 module.exports = router;
