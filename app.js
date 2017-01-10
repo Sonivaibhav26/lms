@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-
+var dbService = require('./api/services/dbService');
 // loading routes
 var routes = require('./api/routes');
 
@@ -15,6 +15,7 @@ app.set('port', 3000);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use('/api', routes);
 //creating server to listen to request
 
 var server = app.listen(app.get('port'), function() {
