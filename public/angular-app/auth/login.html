@@ -1,4 +1,4 @@
-<div class="bs-example">
+<div class="bs-example" ng-controller="LoginController as vm">
     <ul class="nav nav-tabs">
         <li><a data-toggle="tab" href="#sign-in">Sign-In</a></li>
         <li><a data-toggle="tab" href="#sign-up">Sign-Up</a></li>
@@ -9,18 +9,18 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" id="Username" placeholder="Enter your Username" required>
+                        <input type="text" class="form-control" ng-model="vm.username" id="Username" placeholder="Enter your Username" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-5">
-                        <input type="password" class="form-control" id="Password" placeholder="Password" required>
+                        <input type="password" class="form-control" ng-model="vm.password" id="Password" placeholder="Password" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary" ng-submit="vm.login()">Sign in</button>
                     </div>
                 </div>
             </form>

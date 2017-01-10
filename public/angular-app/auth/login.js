@@ -18,7 +18,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
         password: vm.password
       };
 
-      $http.post('/api/users/login', user).then(function(response) {
+      $http.post('/api/login', user).then(function(response) {
         if (response.data.success) {
           $window.sessionStorage.token = response.data.token;
           AuthFactory.isLoggedIn = true;
@@ -38,9 +38,5 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
     delete $window.sessionStorage.token;
     $location.path('/');
   }
-
-  vm.isActiveTab = function(url) {
-    var currentPath = $location.path().split('/')[1];
-    return (url === currentPath ? 'active' : '');
-  }
+  
 }

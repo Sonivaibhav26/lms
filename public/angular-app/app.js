@@ -6,11 +6,13 @@ function config($httpProvider, $routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'angular-app/auth/login.html',
-      controller: LoginCtrl,
+      controller: LoginController,
+      controllerAs: 'vm',
     })
     .when('/dashboard', {
       templateUrl: 'angular-app/dashboard/dashboard.html',
-      controller: MainCtrl,
+      //controller: MainCtrl,
+      //controllerAs: 'vm',
     })
     .otherwise({
       redirectTo: '/'
