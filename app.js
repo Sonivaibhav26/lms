@@ -31,3 +31,8 @@ var server = app.listen(app.get('port'), function() {
   var port = server.address().port;
   console.log('Library management running on port ' + port);
 });
+
+process.on('uncaughtException', function(err) {
+    // handle the error safely
+    loggerService.error("Node error handler",err);
+});

@@ -7,6 +7,8 @@ var loginCtrl = require('../controllers/loginController.js');
 var userCtrl = require('../controllers/userController.js');
 var bookCtrl = require('../controllers/bookController.js'); 
 
+//loginCtrl.authenticate needs to be added in rotes to authenticate
+
 router
     .route('/register')
     .post(registerCtrl.register);
@@ -17,19 +19,19 @@ router
 
 router
     .route('/user')
-    .post(loginCtrl.authenticate,userCtrl.createUser);
+    .post(userCtrl.createUser);
 
 router
     .route('/user/:id')
-    .delete(loginCtrl.authenticate,userCtrl.deleteUser);
+    .delete(userCtrl.deleteUser);
 
 router
     .route('/book')
-    .post(loginCtrl.authenticate,bookCtrl.createBook);
+    .post(bookCtrl.createBook);
 
 router
     .route('/book/:id')
-    .get(loginCtrl.authenticate,bookCtrl.updateBookStatus)
-    .delete(loginCtrl.authenticate,bookCtrl.deleteBook);
+    .get(bookCtrl.updateBookStatus)
+    .delete(bookCtrl.deleteBook);
 
 module.exports = router;
